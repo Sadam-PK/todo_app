@@ -12,10 +12,10 @@ class _ToDoState extends State<ToDo> {
   TextEditingController taskCont = TextEditingController();
   String? todo;
 
-
   @override
   Widget build(BuildContext context) {
     final todos = todoList.map((e) => e.todo).toList();
+    final time = todoList.map((e) => e.time).toList();
     return SizedBox(
       width: double.infinity,
       height: 560,
@@ -79,7 +79,15 @@ class _ToDoState extends State<ToDo> {
               width: double.infinity,
               height: 460,
               // color: Colors.green,
-              child: Text("$todos"),
+              child: ListView.builder(
+                  itemCount: todos.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ListTile(
+                      title: Text(todos[index].toString()),
+                      trailing: const Icon(Icons.done),
+                      subtitle: Text(time[index].toString()),
+                    );
+                  }),
             ),
           ],
         ),

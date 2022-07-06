@@ -12,7 +12,6 @@ class Home extends StatelessWidget {
         elevation: 0.0,
       ),
       body: const ToDo(),
-
     );
   }
 }

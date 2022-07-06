@@ -1,10 +1,11 @@
 class ToDo {
   String? todo;
+  String? time;
 
-  ToDo({this.todo});
+  ToDo({this.todo, this.time});
 }
 
 List<ToDo> todoList = [
-  ToDo(todo: "Ab"),
-  ToDo(todo: "Cd"),
+  ToDo(todo: "Pick fruits", time: "02:00"),
+  ToDo(todo: "Teach kids", time: "04:00"),
 ];
